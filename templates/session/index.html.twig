@@ -5,6 +5,8 @@
 {% block main %}
     <h1>Session</h1>
 
+    <p><a href="{{ path('session_clear') }}">Clear the session.</a></p>
+
     <p>The session contains:</p>
 
     {{ dump(session) }}

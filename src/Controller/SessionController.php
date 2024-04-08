@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SessionController extends AbstractController
 {
-    #[Route('/session')]
+    #[Route('/session', name: "session_index")]
     public function session(
         SessionInterface $session
     ): Response
@@ -22,7 +22,7 @@ class SessionController extends AbstractController
         return $this->render('session/index.html.twig', $data);
     }
 
-    #[Route("/api/session")]
+    #[Route("/api/session", name: "session_api")]
     public function sessionJson(
         SessionInterface $session
     ): Response
@@ -36,5 +36,15 @@ class SessionController extends AbstractController
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
         return $response;
+    }
+
+    #[Route("/session/clear", name: "session_clear")]
+    public function clearSession(
+        SessionInterface $session
+    ): Response
+    {
+        $session->clear();
+
+        return $this->redirectToRoute('session_index');
     }
 }
