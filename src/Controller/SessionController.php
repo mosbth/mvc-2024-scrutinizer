@@ -13,8 +13,7 @@ class SessionController extends AbstractController
     #[Route('/session', name: "session_index")]
     public function session(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $data = [
             'session' => $session->all()
         ];
@@ -25,8 +24,7 @@ class SessionController extends AbstractController
     #[Route("/api/session", name: "session_api")]
     public function sessionJson(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $data = [
             'session' => $session->all()
         ];
@@ -41,8 +39,7 @@ class SessionController extends AbstractController
     #[Route("/session/clear", name: "session_clear")]
     public function clearSession(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->clear();
 
         return $this->redirectToRoute('session_index');
