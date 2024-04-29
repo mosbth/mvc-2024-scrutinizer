@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Dice\Dice;
-use App\Dice\DiceGraphic;
-use App\Dice\DiceHand;
+use Mos\Dice\Dice;
+use Mos\Dice\DiceGraphic;
+use Mos\Dice\DiceHand;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
