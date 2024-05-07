@@ -1,8 +1,8 @@
 <?php
 
-namespace Mos\Dice;
+namespace App\Dice;
 
-use Mos\Dice\Dice;
+use App\Dice\Dice;
 
 class DiceHand
 {

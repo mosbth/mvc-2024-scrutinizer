@@ -1,6 +1,6 @@
 <?php
 
-namespace Mos\Dice;
+namespace App\Dice;
 
 use PHPUnit\Framework\TestCase;
 
